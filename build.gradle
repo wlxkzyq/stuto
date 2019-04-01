@@ -1,0 +1,22 @@
+buildscript {
+    //引入配置文件
+    apply from: 'build-conf.gradle'
+    repositories {
+        maven { url mavenUrl }
+    }
+//    dependencies {
+//        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springVersion}"
+//    }
+}
+
+subprojects {
+    apply from: '../build-base.gradle'
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+}
+
+version '1.0-SNAPSHOT'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

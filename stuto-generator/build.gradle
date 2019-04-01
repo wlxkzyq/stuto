@@ -1,0 +1,29 @@
+group 'com.stuto'
+version '1.0-SNAPSHOT'
+
+dependencies {
+
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+
+    compile project(":stuto-core")
+    compile group: 'com.alibaba', name: 'fastjson', version: fastjsonVersion
+
+    //    spring boot依赖
+    compile("org.springframework.boot:spring-boot-starter-web:${springVersion}")
+    //    spring boot mybaits
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${springmybatisVersion}")
+
+    // https://mvnrepository.com/artifact/org.freemarker/freemarker
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.28'
+
+    runtime("mysql:mysql-connector-java:${mysqlConnertorVersion}")
+
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+
+}
+// excludes dev sources and resources from war
+sourceSets {
+    main.java.srcDir('src/main/ava')
+    main.resources.srcDir('src/main/resources')
+
+}

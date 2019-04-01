@@ -1,0 +1,14 @@
+//group 'com.stuto'
+//version '1.0-SNAPSHOT'
+ext {
+    mavenUrl = 'http://maven.aliyun.com/nexus/content/groups/public'
+//    mavenUrl = 'http://elpdtmvn/repository/maven-public/'
+
+    springVersion = '1.5.10.RELEASE'
+    lombokVersion = '1.16.18'
+    springmybatisVersion = '1.3.2'
+    fastjsonVersion = '1.2.23'
+    junitVersion = '4.12'
+    druidVersion = '1.0.18'
+    mysqlConnertorVersion = '5.1.45'
+}
